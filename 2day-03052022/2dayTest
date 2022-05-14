@@ -1,0 +1,29 @@
+// let string = "30 Days Of JavaScript";
+// let index;
+
+// console.log(index);
+// console.log(string.charAt(index));
+// console.log(string.charCodeAt(index))
+// index = 1
+// console.log(string.charCodeAt(index))
+// console.log(string.endsWith(index))
+
+let num = "8.31"
+let numFloat = Number(num)
+console.log(numFloat)
+
+numFloat = parseFloat(num)
+console.log(numFloat)
+
+numFloat = +num
+console.log(numFloat)
+
+num = "8,31"
+numFloat = Number(num)
+console.log(numFloat)
+
+numFloat = parseFloat(num)
+console.log(numFloat)
+
+numFloat = +num
+console.log(numFloat)
