@@ -1,0 +1,19 @@
+.graph-buttons{
+    color: rgb(242,169,59);
+}
+
+header {
+    background-color: rgb(242,242,242);
+}
+#countries {
+    color: rgb(242,169,59);
+    font-size: 38px;
+    font-family: Montserrat;
+    text-align: center;
+    width: 100%;
+
+}
+/* 	<header id="countries">
+		<h2>World Countries Data</h2>
+		<p class="subtitle"></p>
+		<p class="feedback"></p> */
