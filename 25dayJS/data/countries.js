@@ -2012,4 +2012,4 @@ const countries = [
   }
 ]
 
-export countries;
+export default countries;

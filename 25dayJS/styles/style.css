@@ -1,0 +1,86 @@
+/*  ->    <-    */
+:root {
+	--orange: rgb(242, 169, 59);
+	--background-grey: rgb(242, 242, 242);
+	--background-grey-dark: rgb(214, 212, 212);
+	font-size: 16px;
+}
+
+*,
+::before,
+::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	text-align: center;
+	width: 100vw;
+}
+
+/* ROOT END */
+
+
+/* 1 */
+/*  ->  START HEADER <-    */
+
+header {
+	background-color: var(--background-grey);
+	width: 100vw;
+}
+
+.header1 {
+	color: var(--orange);
+	padding: 0.8em 0.3em 0;
+	font-size: 3em;
+}
+
+.subtitle {
+	padding: 1em 0 0.2em;
+	font-size: 1em;
+}
+
+/*  ->  HEADER END <-    */
+
+/* 2 */
+/*  ->  START BUTTONS <-    */
+
+.graph-buttons {
+	background-color: var(--background-grey);
+	padding: 1em;
+
+	border-top: 1px solid var(--background-grey-dark);
+	border-bottom: 1px solid var(--background-grey-dark);
+}
+
+.button {
+	display: inline-flex;
+	flex-flow: row wrap; 
+	justify-content: center;
+
+	margin: 0 0.1em;
+	padding: 0.5em 1em;
+	border: 0;
+	border-radius: 0.3em;
+
+	background-color: var(--orange);
+
+	font: inherit;
+}
+
+.button:active {
+	background-color: red;
+}
+
+/*  ->  BUTTONS END  <-    */
+
+/* 3 */
+/*  ->  START GRAPH  <-    */
+
+.graphs {
+	background-color: var(--background-grey);
+}
+
+/*  ->  GRAPH END<-    */

@@ -2863,4 +2863,4 @@ const countries_data = [
 	}
 ]
 
-// export {countries_data};
+export default countries_data;
