@@ -1,17 +1,20 @@
-import countries_data from "../data/countries_data.js";
+import countriesData from "../data/countries_data.js";
+// console.log(countries_data) 
 
-// console.log(countries_data)  
-
-
-const needfull_data = countries_data.map( ({name, population, languages}) => {
+const usefulCountriesData = countriesData.map(({name, population, languages}) => {
   return {
     name,
     population,
     languages
   }
-
-
 })
 
-console.log(needfull_data)
-const sortedByPopulatin = needfull_data.sort( ({population}) => )
+//делаем копию массива usefulCountriesData, т.к sort изменяет сортируемый массив
+const sortedFromLowestPopulation = [...usefulCountriesData].sort((a, b) => a.population - b.population)
+const sortedFromHighestPopulation = [...usefulCountriesData].sort((a, b) => b.population - a.population)
+
+// console.log(sortedFromLowestPopulation[0])
+// console.log(sortedFromHighestPopulation[0])
+// console.log(usefulCountriesData[0])
+
+
