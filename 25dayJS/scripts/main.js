@@ -12,54 +12,36 @@ const usefulCountriesData = countriesData.map(({ name, population, languages }) 
   }
 })
 
+// console.log(Object.values(usefulCountriesData))
+
 //делаем копию массива usefulCountriesData, т.к sort изменяет сортируемый массив
 const sortedFromLowestPopulation = [...usefulCountriesData].sort((a, b) => a.population - b.population)
 const sortedFromHighestPopulation = [...usefulCountriesData].sort((a, b) => b.population - a.population)
 
-// console.log(sortedFromLowestPopulation[0])
-// console.log(sortedFromHighestPopulation)
-// console.log(usefulCountriesData[0])
 
 //массив с массивами языков со всех стран
 const languages = usefulCountriesData.map(({ languages }) => languages)
-// console.log(languages)
 
 
-
+//  находим в DOM div-ы c классами graph и population
 const graphContainer = document.body.querySelector(".graph")
 const populationButton = document.body.querySelector(".population")
-// console.log(populationButton, graphContainer)
 
 
+//  создаем тег table и помещаем его в div.graph
 const table = document.createElement("table")
 graphContainer.append(table)
 
+
+//  добавляем шапку таблицы
 const thArray = ["Country", "Popuation"]
 table.append(theadInit(thArray))
 
+//  добавляем тело таблицы, состоящее из maxCountries рядов
+const maxCountries = 3;
+const countriesArray = sortedFromHighestPopulation.slice(0, maxCountries)
 
-const maxCountries = 20;
-const countriesArray = sortedFromHighestPopulation.filter( (elem, index) => index < maxCountries)
-table.append(tbodyInit(countriesArray))
+const keysToFind = ["name", "population"]
+table.append(tbodyInit(countriesArray, keysToFind))
 
 
-// tbody START  tbody > tr > td 'text'
-
-// const tbody = document.createElement("tbody")
-// table.append(tbody)
-
-// for (let i = 0; i < MAX_COUNTRIES; i++){
-//   let tr = document.createElement("tr")
-//   tbody.append(tr)
-  
-//   //very bad
-//   let {name, population} = sortedFromHighestPopulation[i];
-//   let arr = [name, population]
-
-//   for (const value of arr){
-//     const td = document.createElement("td")
-//     td.textContent = `${value}`
-//     tr.append(td)
-//   }
-
-// }

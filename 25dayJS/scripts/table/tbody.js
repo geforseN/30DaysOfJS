@@ -1,27 +1,61 @@
-const thArray = ["Country", "Popuation"]
-console.log(thArray)
+export default function tbodyInit(countriesArray, keysToFind) {
 
-export default function tbodyInit(countriesArray){
+  // создаём элемент tbody, количество рядов (tr) в котором
+  // будет равняться количеству объектов (country)  
+  // в массиве объктов countriesArray
+  const tbody = document.createElement("tbody");
 
-  // создаём элемент tbody,
-  // в котором будет находится countriesArray.length строк (tr)
-  const tbody = document.createElement("tbody")
+  //  проходимся по каждому объекту
+  for (const country of countriesArray) {
 
-  for (let i = 0; i < countriesArray.length; i++){
-    let tr = document.createElement("tr")
-    tbody.append(tr)
+    //  создаем новый ряд и добавляем его в таблицу
+    let tr = document.createElement("tr");
+    tbody.append(tr);
     
-    //very bad
-    let {name, population} = countriesArray[i];
-    let arr = [name, population]
+    const countryKeys = Object.keys(country);
 
-    for (const value of arr) {
-      const td = document.createElement("td")
-      td.textContent = `${value}`
-      tr.append(td)
+    //проходимся по каджому ключу обьекта country
+    for (const key of countryKeys) {
+      
+      //  если нашли подходящий ключ в обьекте country
+      const isKeyFound = keysToFind.indexOf(key) !== -1;
+
+      if (isKeyFound) {
+        //  то создаем столбец, контентом которого 
+        //  будет value у обьекта country
+        const td = document.createElement("td");
+        const value = country[key];
+
+        //  добавляем контент в столбец и
+        //  добавляем столбец в ряд
+        td.textContent = `${value}`;
+        tr.append(td);
+      }
     }
-  }
 
+  }
   return tbody;
-  
 }
+
+/* 
+<tbody>
+  <tr>
+    <td>country[0].key[0]</td>
+    ...
+    ...
+    <td>country[0].key[N]</td>
+  </tr>
+  ...
+    ...
+    ...
+    ...
+  ...
+  <tr>
+    <td>country[countriesArray.length].key[0]</td>
+    ...
+    ...
+    <td>country[countriesArray.length].key[N]</td>
+  </tr>
+</tbody>
+
+*/
