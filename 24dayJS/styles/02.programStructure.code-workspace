@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\eloquentJavaScript\\02.programStructure"
+		},
+		{
+			"path": "..\\..\\..\\eloquentJavaScript\\03.functions"
+		},
+		{
+			"path": "..\\..\\..\\eloquentJavaScript\\04.structures"
+		},
+		{
+			"path": "..\\..\\..\\eloquentJavaScript\\06.object"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "24dayJS"
+	}
+}

@@ -1,0 +1,78 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --button-color: tomato;
+  --container-background-color: rgba(113, 113, 113, 0.3);
+}
+.flex-container {
+  display: flex;
+}
+
+.hide-text {
+  display: none;
+}
+
+body {
+  font-family: "Montserrat", serif;
+  font-size: 16px;
+  background-image: url(../images/galaxy.gif);
+  color: yellowgreen;
+}
+
+/* HEADER START */
+
+header {
+  color: white;
+  text-align: center;
+}
+
+.header1 {
+  margin: 1em 0 2em;
+}
+
+/* HEADER END */
+
+  /* /// */
+
+/* FIELDSET START */
+
+input, select, button {
+  font-family: inherit;
+  padding: 0.5em;
+  margin: 0 0.5rem;
+}
+
+input:focus, select:focus, button:focus {
+  outline-color: yellowgreen;
+}
+
+input::placeholder{
+  /* color: darkblue; */
+  color:tomato;
+}
+
+button:hover{
+  background-color: var(--button-color);
+}
+
+.planet-fieldset{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;  
+
+  flex-basis: 20px;
+  flex-grow: 1;
+}
+
+
+/* FIELDSET END */
+
+  /*  /// */
+
+.flex-container{
+  display: flex;
+  background-color: var(--container-background-color);
+}
