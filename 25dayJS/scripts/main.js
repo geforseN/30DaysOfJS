@@ -1,4 +1,5 @@
 import countriesData from "../data/countries_data.js";
+import theadInit from "./table/thead.js";
 // console.log(countries_data) 
 
 // обьект с полями: название страны, её популяция, массив языков
@@ -34,27 +35,15 @@ console.log(populationButton, graphContainer)
 
 
 
+
+
 const table = document.createElement("table")
 graphContainer.append(table)
+//как то так
+  const thArray = ["Country", "Popuation"]
+  table.append(theadInit(thArray))
 
-//  thead START 
 
-const thead = document.createElement("thead") 
-table.append(thead)
-
-const tr = document.createElement("tr")
-thead.append(tr)
-
-const thArray = ["Country", "Popuation"]
-
-for (const country of thArray){
-  console.log(country)
-  const th = document.createElement("th")
-  th.textContent = `${country}`
-  tr.append(th)
-}
-
-//  thead END
 
 // tbody START  tbody > tr > td 'text'
 
@@ -76,12 +65,3 @@ for (let i = 0; i < MAX_COUNTRIES; i++){
   }
 
 }
-
-
-// for (let i = 0; i < 10; i++){
-//   let country = document.createElement("li")
-//   let {name, population} = sortedFromHighestPopulation[i];
-//   country.textContent = `${name} ${population}`
-//   // document.body.appendChild(country)
-//   graphContainer.append(country)
-// }
