@@ -1,7 +1,8 @@
 import countriesData from "../data/countries_data.js";
 // console.log(countries_data) 
 
-const usefulCountriesData = countriesData.map(({name, population, languages}) => {
+// обьект с полями: название страны, её популяция, массив языков
+const usefulCountriesData = countriesData.map(({ name, population, languages }) => {
   return {
     name,
     population,
@@ -17,4 +18,7 @@ const sortedFromHighestPopulation = [...usefulCountriesData].sort((a, b) => b.po
 // console.log(sortedFromHighestPopulation[0])
 // console.log(usefulCountriesData[0])
 
+//массив с массивами языков со всех стран
+const languages = usefulCountriesData.map(({ languages }) => languages)
+console.log(languages)
 
