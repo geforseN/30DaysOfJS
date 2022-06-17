@@ -2,6 +2,7 @@ import countriesData from "../data/countries_data.js";
 import theadInit from "./table/theadInit.js";
 import tbodyInit from "./table/tbodyInit.js";
 import changeSubtitle from "./subtitle.js";
+import validObjectEntries from "./validObjectEntries.js";
 
 
 // обьект с полями: название страны, её популяция, массив языков
@@ -34,27 +35,7 @@ const maxRows = 20;
 let keysToFind = ["name", "population"];
 
 let countriesArray = sortedFromHighestPopulation.slice(0, maxRows);
-
-function validData(objectArray, keysToFind) {
-  const goodObjectArray = [];
-  for (const object of objectArray) {
-    // objectKeys - это массив, состоящий из stirng
-    const objectKeys = Object.keys(object);
-    const goodObject = {};
-    for (const key of keysToFind) {
-      const isKeyFound = objectKeys.indexOf(`${key}`) !== -1;
-      if (isKeyFound) {
-        const objectValue = object[key];
-        goodObject[key] = objectValue;
-      }
-    }
-    goodObjectArray.push(goodObject);
-  } 
-
-  return goodObjectArray;
-}
-
-countriesArray = validData(countriesArray, keysToFind);
+countriesArray = validObjectEntries(countriesArray, keysToFind);
 
 const tableBody = tbodyInit(countriesArray)
 
