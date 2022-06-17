@@ -1,21 +1,21 @@
-export default function validObjectEntries(objectArray, keysToFind) {
-  const validObjectArray = [];
+export default function decreaseObjectsEntries(objectArray, keysToFind) {
+  const validObjectsArray = [];
   for (const object of objectArray) {
     // objectKeys - это массив, состоящий из stirng
     const objectKeys = Object.keys(object);
-    const validObject = {};
+    const validObjects = {};
 
     for (const key of keysToFind) {
       const isKeyFound = objectKeys.indexOf(`${key}`) !== -1;
 
       if (isKeyFound) {
         const objectValue = object[key];
-        validObject[key] = `${objectValue}`;
+        validObjects[key] = `${objectValue}`;
       }
     }
 
-    validObjectArray.push(validObject);
+    validObjectsArray.push(validObjects);
   } 
 
-  return validObjectArray;
+  return validObjectsArray;
 }
