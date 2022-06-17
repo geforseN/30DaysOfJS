@@ -1,24 +1,20 @@
-export default function theadInit(theadContent) {
+import trInit from "./trInit.js";
+
+export default function theadInit(thEntireContent) {
   
   const thead = document.createElement("thead") 
 
-  //tableRow это верхний ряд таблицы (шапка),
-  //в столбцах tableRow будут данные из массива theadContent
-  const tableRow = document.createElement("tr")
-  thead.append(tableRow)
-
-  //проходися по всему массиву theadCoundent
-  //и добавляем в каждый столбец данные
-  for (const thContent of theadContent){
-    const tableHeader = document.createElement("th")
-    tableHeader.textContent = `${thContent}`
-    tableRow.append(tableHeader)
-  }
+  //tr это верхний таблицы ,
+  //в столбцах tr находятся даныые thContent
+  const tr = trInit(thEntireContent)
+  thead.append(tr)
 
   return thead;
 }
 
 /* 
+  return thead;
+
   <thead>
     <tr>
       <th>${Content[0]}</th>

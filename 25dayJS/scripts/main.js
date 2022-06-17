@@ -1,5 +1,5 @@
 import countriesData from "../data/countries_data.js";
-import theadInit from "./table/thead.js";
+import theadInit from "./table/theadInit.js";
 import tbodyInit from "./table/tbody.js";
 import changeSubtitle from "./subtitle.js";
 
@@ -31,47 +31,39 @@ const populationButton = document.body.querySelector("button.population");
 let isTableActive = false;
 
 
+//  шапка!!!
+const tableHeadArray = ["Country", "Popuation"];
+const tableHead = theadInit(tableHeadArray);
 
-
-// add <caption> in <table>
-// createPopulationTable()
-
-//  шапка таблицы
-
+//  тело!!!
 // переменные для тела таблицы
 const maxCountries = 20;
 const keysToFind = ["name", "population"];
 //  добавляем тело таблицы, состоящее из maxCountries рядов,
 const countriesArray = sortedFromHighestPopulation.slice(0, maxCountries);
-
-const tableHeadArray = ["Country", "Popuation"];
-const tableHead = theadInit(tableHeadArray);
-console.log(tableHead)
-
 const tableBody = tbodyInit(countriesArray, keysToFind)
 
+
+//  подпись!!!
 const caption = document.createElement("caption")
 caption.textContent = "Данные о популяции стран"
 const populationCaption = caption
-const table = document.body.querySelector(".table"); 
 
-function createTable(table, tableHead, tableBody, tableCaption) {
+
+const table = document.body.querySelector(".table"); 
+function appendInTable(table, tableCaption, tableHead, tableBody) {
   table.append(tableCaption)
   table.append(tableHead);
   table.append(tableBody)
+
+  return table;
 }
 
 
 // const languages = usefulCountriesData.map(({ languages }) => languages)
 
 
-// populationButton.addEventListener("click", createPopulationTable, {once: true})
-
-createTable(table, tableHead, tableBody, populationCaption)
-
-// createLanguagesTable()
-
-
+appendInTable(table, populationCaption, tableHead, tableBody)
 
 
 
