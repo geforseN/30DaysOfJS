@@ -1,4 +1,5 @@
-import trInit from "./trInit.js";
+import { trInitTh } from "./trInit.js"; 
+// import trInit from "./trInit.js";
 
 export default function theadInit(thEntireContent) {
   
@@ -6,7 +7,7 @@ export default function theadInit(thEntireContent) {
 
   //tr это верхний таблицы ,
   //в столбцах tr находятся даныые thContent
-  const tr = trInit(thEntireContent)
+  const tr = trInitTh(thEntireContent)
   thead.append(tr)
 
   return thead;

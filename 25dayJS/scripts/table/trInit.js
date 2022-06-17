@@ -1,11 +1,9 @@
-export default function trInit(thEntireContent) {
-
+export function trInitTh(thEntireContent) {
   const tr = document.createElement("tr");
 
-  //проходися по всему массиву thContent
-  //и добавляем в каждый столбец данные
   for (const thContent of thEntireContent) {
     const th = document.createElement("th");
+    
     th.textContent = `${thContent}`;
     tr.append(th);
   }
@@ -13,11 +11,18 @@ export default function trInit(thEntireContent) {
   return tr;
 }
 
-/*
-<tr>
-  <th>${Content[0]}</th>
-  ...
-  ...
-  <th>${Content[array.length]}</th>
-</tr>
-*/
+export function trInitTd(object) {
+  const tr = document.createElement("tr");
+  const objectKeys = Object.keys(object); 
+
+  for (const key of objectKeys) {
+      const td = document.createElement("td");
+      const objectValue = object[key];
+
+      td.textContent = `${objectValue}`;
+      tr.append(td);
+    
+  }
+
+  return tr;
+}
