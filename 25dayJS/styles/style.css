@@ -17,7 +17,10 @@
 body {
 	font-family: "Montserrat", sans-serif;
 	text-align: center;
-	width: 100vw;
+	max-width: 100vw;
+	min-height: 100vh;
+	background-color: rgba(193, 255, 253, 0.403);
+	overflow-x: hidden;
 }
 
 /* ROOT END */
@@ -79,8 +82,66 @@ header {
 /* 3 */
 /*  ->  START GRAPH  <-    */
 
-.graphs {
+.graph {
 	background-color: var(--background-grey);
+	text-align: center;
+	border: 1px solid black;
+
 }
 
+table {
+	border-collapse: collapse;
+	margin: 1em auto;
+}
+
+th, td {
+	text-align: left;
+	padding: 1em;
+	border: 1px solid black;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: var(--background-grey-dark);
+}
+
+/* th, td {
+	display: flex;
+	justify-content: space-between;
+} */
+
+
 /*  ->  GRAPH END<-    */
+/* 
+@counter-style row {
+	system: numeric;
+	pad: 2 "0";
+	sumbols: a b c;
+}
+
+
+th {
+	counter-reset: row 1;
+}
+
+
+tr {
+	counter-increment: row;
+}
+
+tr::before {
+	content: ""counter(row)":";
+	position: absolute;
+	margin-top: 1em;
+	margin-left: 1.2em;
+		list-style: row;
+}
+
+thead tr::before {
+	content: ""
+}
+
+tr td:first-of-type,
+tr th:first-of-type {
+	padding-left: 2em;
+}
+ */

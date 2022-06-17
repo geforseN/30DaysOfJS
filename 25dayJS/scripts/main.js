@@ -1,9 +1,9 @@
 import countriesData from "../data/countries_data.js";
 import theadInit from "./table/thead.js";
 import tbodyInit from "./table/tbody.js";
+import changeSubtitle from "./subtitle.js";
 
 // //массив с массивами языков со всех стран
-// const languages = usefulCountriesData.map(({ languages }) => languages)
 
 // console.log(Object.values(usefulCountriesData))
 
@@ -19,33 +19,63 @@ const usefulCountriesData = countriesData.map(
 });
 
 
+
 //делаем копию массива usefulCountriesData, т.к sort изменяет сортируемый массив
 const sortedFromLowestPopulation = [...usefulCountriesData].sort((a, b) => a.population - b.population);
 const sortedFromHighestPopulation = [...usefulCountriesData].sort((a, b) => b.population - a.population);
 
-
-//  находим в DOM div-ы c классами graph и population
-const graphContainer = document.body.querySelector(".graph");
-const populationButton = document.body.querySelector(".population");
-
-
-//  создаем тег table и помещаем его в div.graph
-const table = document.createElement("table");
-graphContainer.append(table);
+const subtitle = document.body.querySelector(".subtitle")
+changeSubtitle(subtitle, countriesData.length)
+ 
+const populationButton = document.body.querySelector("button.population");
+let isTableActive = false;
 
 
-//  добавляем шапку таблицы
-const thArray = ["Country", "Popuation"];
-table.append(theadInit(thArray));
 
+
+// add <caption> in <table>
+// createPopulationTable()
+
+//  шапка таблицы
 
 // переменные для тела таблицы
-const maxCountries = 10;
+const maxCountries = 20;
 const keysToFind = ["name", "population"];
+//  добавляем тело таблицы, состоящее из maxCountries рядов,
 const countriesArray = sortedFromHighestPopulation.slice(0, maxCountries);
 
-//  добавляем тело таблицы, состоящее из maxCountries рядов,
-//  в столбацах которого будут находится значения от нужных ключей
-table.append(tbodyInit(countriesArray, keysToFind));
+const tableHeadArray = ["Country", "Popuation"];
+const tableHead = theadInit(tableHeadArray);
+console.log(tableHead)
+
+const tableBody = tbodyInit(countriesArray, keysToFind)
+
+const caption = document.createElement("caption")
+caption.textContent = "Данные о популяции стран"
+const populationCaption = caption
+const table = document.body.querySelector(".table"); 
+
+function createTable(table, tableHead, tableBody, tableCaption) {
+  table.append(tableCaption)
+  table.append(tableHead);
+  table.append(tableBody)
+}
 
 
+// const languages = usefulCountriesData.map(({ languages }) => languages)
+
+
+// populationButton.addEventListener("click", createPopulationTable, {once: true})
+
+createTable(table, tableHead, tableBody, populationCaption)
+
+// createLanguagesTable()
+
+
+
+
+
+  // //  находим в DOM элемент c классом chart
+  // const chart = document.body.querySelector(".chart"); 
+  // // и помещаем в в него элем. с классом table
+  // chart.append(table);
