@@ -7,9 +7,9 @@ import changeSubtitle from "./changeSubtitle.js";
 // let isTableActive = false;
 
 let table = document.body.querySelector(".table");
-appendInTable(table, tableElement)
+appendInTable(table, tableElement);
 
-const subtitle = document.body.querySelector(".subtitle")
-changeSubtitle(subtitle, countriesData.length)
+const subtitle = document.body.querySelector(".subtitle");
+changeSubtitle(subtitle, countriesData.length);
 
 // const languages = usefulCountriesData.map(({ languages }) => languages)

@@ -5,10 +5,8 @@ export default function appendInTable(table, tableContent) {
     tableBody: body
   } = tableContent;
 
-  table.append(caption)
-  table.append(head);
-  table.append(body)
-
+  table.append(caption, head, body);
+  
   return table;
 }
 

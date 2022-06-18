@@ -1,6 +1,6 @@
 import countriesData from "../../data/countries_data.js";
 
-const captionContent = "Country population data"
+const captionContent = "Country population data";
 
 const headContent = ["Country", "Popuation"];
 
@@ -13,7 +13,14 @@ export const tableData = {
   headContent,
   bodyContent,
   maxRows,
-  keysToFind
-}
+  keysToFind,
+};
 
-
+// const objClass = {
+//   captionContent: "string",
+//   headContent: "stringArray",
+//   keysToFind: "stringArray",
+//   maxRows: "number",
+//   sortType: "function",
+//   bodyContent: "objectsArray",
+// };
