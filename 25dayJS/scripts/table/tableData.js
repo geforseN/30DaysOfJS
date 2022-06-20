@@ -6,7 +6,7 @@ export const languagesTableData = {
   headContent: ["Languages", "Amount"],
   bodyContent: countriesData,
   sort(bodyContent){
-    const languages = countriesData.map(({ languages }) => languages).flat();
+    const languages = bodyContent.map(({ languages }) => languages).flat();
     return findAmountOfLanguagesUses(languages).sort((a, b) => b.amount - a.amount);
   },
   maxRows: 250,
@@ -19,7 +19,6 @@ export const populationTableData = {
   bodyContent: countriesData,
   keysToFind: ["name", "population"],
   sort(bodyContent){
-    console.log( [...bodyContent].sort((a, b) => b.population - a.population))
     return [...bodyContent].sort((a, b) => b.population - a.population);
   },
   maxRows: 20,

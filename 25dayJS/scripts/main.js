@@ -6,13 +6,10 @@ import changeSubtitle from "./changeSubtitle.js";
 const subtitle = document.body.querySelector(".subtitle");
 changeSubtitle(subtitle, countriesData.length);
 
-
 const populationButton = document.body.querySelector("button.population");
-const languagesButton = document.body.querySelector("button.languages")
-populationButton.addEventListener("click", populationButtonListener)
-languagesButton.addEventListener("click", languagesButtonListener)
-
-// const languages = usefulCountriesData.map(({ languages }) => languages)
+const languagesButton = document.body.querySelector("button.languages");
+populationButton.addEventListener("click", populationButtonListener);
+languagesButton.addEventListener("click", languagesButtonListener);
 
 const chartWindow = document.body.querySelector(".chart-window");
 
