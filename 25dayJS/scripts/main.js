@@ -33,11 +33,9 @@ chartWindow.appendChild(languagesTable);
 function populationButtonListener(event){
   switch (populationTable.style.display) {
     case "block":
-      console.log("popul block")
       populationTable.style.display = "none";
       break;
     case "none":
-      console.log("popul none")
       populationTable.style.display = "block";
       break;
     default:
@@ -48,11 +46,9 @@ function populationButtonListener(event){
 function languagesButtonListener(event){
   switch (languagesTable.style.display) {
     case "block":
-      console.log("lang block")
       languagesTable.style.display = "none";
       break;
     case "none":
-      console.log("lang none")
       languagesTable.style.display = "block";
       break;
     default:
