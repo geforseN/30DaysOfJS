@@ -1,28 +1,29 @@
 import countriesData from "../../data/countries_data.js";
-
+import findAmountOfLanguagesUses from "../findAmountOfLAnguagesUses.js";
 
 export const languagesTableData = {
-  captionContent: "Languages data",
-  headContent: ["Country", "Languages"],
-  bodyContent: countriesData,
-  sort(countriesData){
-    return [...countriesData]
-    .sort((a, b) => b.languages.length - a.languages.length)
-  },
-  maxRows: 10,
-  keysToFind: ["name", "languages"],
-}
-
-export const languagesTableDataGood = {
   captionContent: "Most Spoken Languages In The World",
-  headContent: ["Languages", ],
+  headContent: ["Languages", "Amount"],
   bodyContent: countriesData,
   sort(bodyContent){
-    return [...bodyContent].sort((a, b) => b.languages - a.languages);
+    const languages = countriesData.map(({ languages }) => languages).flat();
+    return findAmountOfLanguagesUses(languages).sort((a, b) => b.amount - a.amount);
   },
   maxRows: 250,
   keysToFind: ["name", "languages"],
 }
+
+export const populationTableData = {
+  captionContent: "Most Populated Countries In The World",
+  headContent: ["Country", "Popuation"],
+  bodyContent: countriesData,
+  keysToFind: ["name", "population"],
+  sort(bodyContent){
+    console.log( [...bodyContent].sort((a, b) => b.population - a.population))
+    return [...bodyContent].sort((a, b) => b.population - a.population);
+  },
+  maxRows: 20,
+};
 
 // const object = {
 //   captionContent: "string",
@@ -32,14 +33,3 @@ export const languagesTableDataGood = {
 //   sortType: "function",
 //   bodyContent: "objectsArray",
 // };
-export const populationTableData = {
-  captionContent: "Most Populated Countries In The World",
-  headContent: ["Country", "Popuation"],
-  bodyContent: countriesData,
-  keysToFind: ["name", "population"],
-  sort(bodyContent){
-    return [...bodyContent].sort((a, b) => b.population - a.population);
-  },
-  maxRows: 20,
-};
-
