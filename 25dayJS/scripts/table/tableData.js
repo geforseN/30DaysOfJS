@@ -1,20 +1,28 @@
 import countriesData from "../../data/countries_data.js";
+ // ! add sortType in objects
 
-const captionContent = "Country population data";
+export const languagesTableData = {
+  captionContent: "Languages data",
+  headContent: ["Country", "Languages"],
+  bodyContent: countriesData,
+  sort(countriesData){
+    return [...countriesData].sort((a, b) => b.language - a.language);
+  },
+  maxRows: 10,
+  keysToFind: ["name", "country"],
+}
 
-const headContent = ["Country", "Popuation"];
-
-const bodyContent = countriesData;
-const maxRows = 20;
-const keysToFind = ["name", "population"];
-
-export const tableData = {
-  captionContent,
-  headContent,
-  bodyContent,
-  maxRows,
-  keysToFind,
+export const populationTableData = {
+  captionContent: "Country population data",
+  headContent: ["Country", "Popuation"],
+  bodyContent: countriesData,
+  sort(countriesData){
+    return [...countriesData].sort((a, b) => b.population - a.population);
+  },
+  maxRows: 20,
+  keysToFind: ["name", "population"],
 };
+
 
 // const objClass = {
 //   captionContent: "string",
