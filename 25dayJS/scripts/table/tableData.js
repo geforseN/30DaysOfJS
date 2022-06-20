@@ -6,10 +6,10 @@ export const languagesTableData = {
   headContent: ["Country", "Languages"],
   bodyContent: countriesData,
   sort(countriesData){
-    return [...countriesData].sort((a, b) => b.language - a.language);
+    return [...countriesData].sort((a, b) => b.languages - a.languages);
   },
-  maxRows: 10,
-  keysToFind: ["name", "country"],
+  maxRows: 250,
+  keysToFind: ["name", "languages"],
 }
 
 export const populationTableData = {
