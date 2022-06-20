@@ -14,29 +14,29 @@ languagesButton.addEventListener("click", languagesButtonListener)
 
 // const languages = usefulCountriesData.map(({ languages }) => languages)
 
-
 const chartWindow = document.body.querySelector(".chart-window");
 
 const populationTable = document.createElement("table");
 appendInTable(populationTable, populationElement);
-populationTable.className = "populationTable";
+populationTable.className = "table populationTable";
 populationTable.style.display = "none";
 
 const languagesTable = document.createElement("table");
 appendInTable(languagesTable, languagesElement);
-languagesTable.className = "languagesTable";
+languagesTable.className = "table languagesTable";
 languagesTable.style.display = "none";
 
 chartWindow.appendChild(populationTable);
 chartWindow.appendChild(languagesTable);
 
 function populationButtonListener(event){
+  // ! добавлять класс showed на .button:focus и изменять цвет
   switch (populationTable.style.display) {
-    case "block":
+    case "table":
       populationTable.style.display = "none";
       break;
     case "none":
-      populationTable.style.display = "block";
+      populationTable.style.display = "table";
       break;
     default:
       break;
@@ -45,11 +45,11 @@ function populationButtonListener(event){
 
 function languagesButtonListener(event){
   switch (languagesTable.style.display) {
-    case "block":
+    case "table":
       languagesTable.style.display = "none";
       break;
     case "none":
-      languagesTable.style.display = "block";
+      languagesTable.style.display = "table";
       break;
     default:
       break;
