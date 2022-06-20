@@ -11,13 +11,12 @@ function tableInit(tableData){
 
   const tableHead = theadInit(headContent);
 
-  const validObjects = validateObjects(bodyContent, sort, keysToFind, maxRows);
+  const validObjects = validateObjects(bodyContent,  keysToFind, sort, maxRows);
   const tableBody = tbodyInit(validObjects);
 
   const tableCaption = document.createElement("caption");
   tableCaption.textContent = captionContent;
 
-  console.log(tableCaption);
   return {tableCaption, tableHead, tableBody};
 }
 
